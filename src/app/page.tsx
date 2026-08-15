@@ -2,6 +2,7 @@ import { GlassNavbar } from "@/components/home/glass-navbar";
 import { HomeBackground } from "@/components/home/home-background"
 // import { ProjectGrid } from "@/components/home/project-grid";
 import { PromptInput } from "@/components/home/prompt-input";
+
 // import { ProjectGrid } from "@/features/projects/components/project-grid";
 
 
@@ -11,7 +12,7 @@ import { PromptInput } from "@/components/home/prompt-input";
  * Renders the decorative background, the glass navbar, the main prompt input for
  * starting a new build, and the grid of the user's existing projects.
  */
-export default function Home() {
+export default  function Home() {
 
   return (
     <div className="relative flex min-h-full flex-1 flex-col overflow-hidden">
