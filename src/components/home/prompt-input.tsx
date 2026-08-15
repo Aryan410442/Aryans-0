@@ -18,15 +18,23 @@ import {
   getRandomPromptTemplate,
   promptTemplateCategories,
 } from "@/components/home/prompt-templates";
-// import { useCreateProject } from "@/features/projects/hooks/projects";
+import { useCreateProject } from "@/features/projects/hooks/projects";
 
 export function PromptInput() {
   const [prompt, setPrompt] = useState("");
   const router = useRouter();
-  const isPending=false;
-//   const { mutate: createProject, isPending } = useCreateProject();
+//   const isPending=false;
+  const { mutate: createProject, isPending } = useCreateProject();
 
   function handleSubmit() {
+    createProject(prompt, {
+        onSuccess: (project) => {
+          router.push(`/projects/${project.id}`);
+        },
+        onError: (error) => {
+          toast.error(error.message);
+        }
+      })
      }
 
   /**
