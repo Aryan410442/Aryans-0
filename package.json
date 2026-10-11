@@ -6,12 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postinstall": "patch-package && node scripts/patch-agent-kit.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
     "@clerk/nextjs": "^7.7.6",
     "@e2b/code-interpreter": "^2.7.1",
+    "@google/genai": "^2.17.1",
     "@inngest/agent-kit": "^0.13.2",
     "@prisma/adapter-pg": "^7.9.1",
     "@prisma/client": "^7.9.1",
@@ -49,7 +51,9 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.1",
+    "patch-package": "^8.0.1",
     "tailwindcss": "^4",
+    "tsx": "^4.23.12",
     "typescript": "^5"
   }
 }
